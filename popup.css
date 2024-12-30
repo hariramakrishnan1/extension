@@ -1,0 +1,34 @@
+body{
+    background-color: #1c1d22;
+    color: #FFFFFF;
+    width: 350px;
+    height: 100px;
+}
+
+
+#speed_slider{
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 100%;
+    height: 3px;
+    border-radius: 0px;  
+    background: #FFFFFF;
+    opacity: 0.9;
+    -webkit-transition: .5s;
+    transition: opacity .5s; 
+    margin-top: 20px;
+}
+
+#speed_slider:hover {
+    opacity: 1; 
+  }
+
+#speed_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; 
+    background: #FFFFFF;
+    cursor: pointer;
+  }
