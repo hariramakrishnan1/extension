@@ -32,3 +32,15 @@ body{
     background: #FFFFFF;
     cursor: pointer;
   }
+
+  #speed_value{
+    width: 1.7rem;
+    border: 1px solid #CCCCCC;
+    background-color: #1c1d22;
+    color: #CCCCCC;
+  }
+
+  #speed_value:focus-visible{
+    border: 1px solid #FFFFFF;
+    outline:none;
+  }

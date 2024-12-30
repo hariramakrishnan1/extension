@@ -4,8 +4,12 @@
     "version": "1.0",
     "description": "Various tasks",
     "permissions": [
-        "tabs"
+        "tabs",
+        "scripting"
     ],
+    "host_permissions": [
+        "<all_urls>"
+      ],
     "background": {
         "service_worker": "worker.js"
     },
