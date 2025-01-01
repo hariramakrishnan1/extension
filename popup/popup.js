@@ -14,24 +14,20 @@ document.getElementById("speed_value").addEventListener('input',() => {
         if(!injected_tabs.includes(tab)){
             chrome.scripting.executeScript({
                 target: { tabId: tab },
-                func: change_speed_script,
-                args: [value]
+                func: change_speed_script
             });
             injected_tabs.push(tab);
         }
-        else{
-            chrome.tabs.sendMessage(
-                tab,
-                { action: "change speed", data: value}
-              );
-        }
+        chrome.tabs.sendMessage(
+            tab,
+            { action: "change speed", data: value}
+            );
       
     });
 })
 
-function change_speed_script(speed){
+function change_speed_script(){
     let videos = document.querySelectorAll('video');
-    videos[0].playbackRate = speed;
 
     chrome.runtime.onMessage.addListener((message) => {
         if (message.action === "change speed") {
@@ -46,17 +42,14 @@ slider.addEventListener("change",() => {
         if(!injected_tabs.includes(tab)){
             chrome.scripting.executeScript({
                 target: { tabId: tab },
-                func: change_speed_script,
-                args: [(slider.value)/100]
+                func: change_speed_script
             });
             injected_tabs.push(tab);
         }
-        else{
-            chrome.tabs.sendMessage(
-                tab,
-                { action: "change speed", data: (slider.value)/100 }
-              );
-        }
+        chrome.tabs.sendMessage(
+            tab,
+            { action: "change speed", data: (slider.value)/100 }
+            );
       
     });
   });
