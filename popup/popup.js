@@ -7,8 +7,8 @@ slider.addEventListener('input',() => {
 })
 
 document.getElementById("speed_value").addEventListener('input',() => {
-    let value = parseFloat(document.getElementById("speed_value").value) == NaN ? 
-    1 : parseFloat(document.getElementById("speed_value").value);
+    let value = isNaN(parseFloat(document.getElementById("speed_value").value)) ? 
+    0 : parseFloat(document.getElementById("speed_value").value);
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         tab = tabs[0].id;
         if(!injected_tabs.includes(tab)){
